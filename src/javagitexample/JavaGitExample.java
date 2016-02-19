@@ -17,6 +17,7 @@ public class JavaGitExample {
     public static void main(String[] args) {
         System.out.println("ensayo de repositorio");
         System.out.println("ensayo de actualización");
+         System.out.println("ensayo 2 de actualización");
     }
     
 }
