@@ -11,9 +11,10 @@ public class JavaGitExample {
 
     public static void main(String[] args) {
 
-        int opcion;
+        int opcion, c = 0;
+        String nombreClase, apellidoClase, cedulaClase;
         Scanner lector = new Scanner(System.in);
-        int c = 0;
+
         Usuario[] nit = new Usuario[10];
 
         do {
@@ -33,11 +34,17 @@ public class JavaGitExample {
                     c++;
                     nit[c] = new Usuario();
                     System.out.println("ingrese el nombre:");
-                    nit[c].nombre = lector.next();
+                    nombreClase = lector.next();
+                    nit[c].setNombre1(nombreClase);
+                    //nit[c].nombre = lector.next();
                     System.out.println("ingrese el apellido:");
-                    nit[c].apellido = lector.next();
+                    apellidoClase = lector.next();
+                    nit[c].setApellido1(apellidoClase);
+                    //nit[c].apellido = lector.next();
                     System.out.println("ingrese el numero de cedula:");
-                    nit[c].cedula = lector.next();
+                    cedulaClase = lector.next();
+                    nit[c].setCedula1(cedulaClase);
+                    //nit[c].cedula = lector.next();
                     System.out.println("se ingreso el usuario con exito");
 
                     break;
@@ -53,19 +60,25 @@ public class JavaGitExample {
                         nit[i] = new Usuario();
                         for (i = 0; i < c + 1; i++) {
 
-                            if (buscar.equals(nit[i].nombre)) {
+                            if (buscar.equals(nit[i].getNombre1())) {
                                 System.out.println("el usuario si existe:");
                                 System.out.println("datos: ");
-                                System.out.println("nombre: " + nit[i].nombre);
-                                System.out.println("apellido:" + nit[i].apellido);
-                                System.out.println("cedula: " + nit[i].cedula);
+                                System.out.println("nombre: " + nit[i].getNombre1());
+                                System.out.println("apellido:" + nit[i].getApellido1());
+                                System.out.println("cedula: " + nit[i].getCedula1());
                                 //actualiza los datos
                                 System.out.println("ingrese el nuevo nombre:");
-                                nit[i].nombre = lector.next();
+                                nombreClase = lector.next();
+                                nit[i].setNombre1(nombreClase);
+                                //nit[i].nombre = lector.next();
                                 System.out.println("ingrese el nuevo apellido:");
-                                nit[i].apellido = lector.next();
+                                apellidoClase = lector.next();
+                                nit[i].setApellido1(apellidoClase);
+                                //nit[i].apellido = lector.next();
                                 System.out.println("ingrese el nuevo numero de cedula:");
-                                nit[i].cedula = lector.next();
+                                cedulaClase = lector.next();
+                                nit[i].setCedula1(cedulaClase);
+                                //nit[i].cedula = lector.next();
                                 estado = 1;
                                 break;
 
@@ -85,24 +98,25 @@ public class JavaGitExample {
 
                 case 4:
 
-                    int j = 0, esta = 0;
+                    int j = 0,
+                     esta = 0;
                     String buscaUsuario;
                     System.out.println("ingrese el nombre del usuario para buscar datos:");
                     buscaUsuario = lector.next();
                     if (c > 0) {
                         nit[j] = new Usuario();
                         for (j = 0; j <= c; j++) {
-                            if (nit[j].nombre.equals(buscaUsuario)) {
+                            if (buscaUsuario.equals(nit[j].getNombre1())) {
                                 System.out.println("el usuario si existe:");
                                 System.out.println("datos: ");
-                                System.out.println("nombre: " + nit[j].nombre);
-                                System.out.println("apellido: " + nit[j].apellido);
-                                System.out.println("cedula: " + nit[j].cedula);
+                                System.out.println("nombre: " + nit[j].getNombre1());
+                                System.out.println("apellido: " + nit[j].getApellido1());
+                                System.out.println("cedula: " + nit[j].getCedula1());
                                 esta = 1;
                                 break;
                             }
                         }
-                    } 
+                    }
                     if (esta == 0) {
                         System.out.println("no existe el usuario");
                     }
@@ -115,13 +129,14 @@ public class JavaGitExample {
                     if (c > 0) {
                         for (p = 0; p <= c; p++) {
                             System.out.println("datos:");
-                            System.out.println("nit: " +p);
-                            System.out.println("nombre: " + nit[p].nombre);
-                            System.out.println("apellido: " + nit[p].apellido);
-                            System.out.println("cedula: " + nit[p].cedula);
+                            System.out.println("nit: " + p);
+                            System.out.println("nombre: " + nit[p].getNombre1());
+                            System.out.println("apellido: " + nit[p].getApellido1());
+                            System.out.println("cedula: " + nit[p].getCedula1());
+                            
                         }
                     }
-                    break; 
+                    break;
             }
         } while (opcion != 6);
 
