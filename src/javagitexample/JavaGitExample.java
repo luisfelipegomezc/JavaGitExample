@@ -86,6 +86,7 @@ public class JavaGitExample {
                     String buscaUsuario;
                     System.out.println("ingrese el nombre del usuario para buscar datos:");
                     buscaUsuario = lector.next();
+                    if(c!=0){
                     for(j = 0; j <= c; j++){
                         if(nit[j].nombre.equals( buscaUsuario)){
                             System.out.println("el usuario si existe:");
@@ -93,24 +94,30 @@ public class JavaGitExample {
                             System.out.println("nombre: "+nit[j].nombre);
                             System.out.println("apellido:"+nit[j].apellido);
                             System.out.println("cedula: "+nit[j].cedula);
-                            estado = 1;
+                            esta = 1;
                             break;
                         }
-                    }
+                        }
+                    }else{
+                        break;
+                        }
                     if(esta == 0){
                             System.out.println("no existe el usuario");
                         }
                     break;
                     
+            
                 case 5:
                     
-                    int p = 0;
+                    int p;
+                    
                     for(p = 0 ; p <= c; p++){
                         System.out.println("datos:");
                         System.out.println("nombre"+nit[p].nombre);
                         System.out.println("apellido"+nit[p].apellido);
                         System.out.println("cedula"+nit[p].cedula);
                     }
+                    
                     break;
             }
             }while(opcion!=6);
